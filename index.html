@@ -15,24 +15,25 @@
 
 <body>
     <div class="container text-center">
-        <h1 class="text-center m-5">Users</h1>
-        <div id="result" class="row justify-content-center">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <div class="card mx-auto bg-dark text-white" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${data.name}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h3 class="text-center my-5">Random User Generator</h1>
+            <div id="result" class="row justify-content-center m-5">
+                <div class="col-sm-1 col-md-2 col-lg-4"></div>
+                <div class="col-sm-1 col-md-2 col-lg-4">
+                    <div class="card mx-auto bg-dark text-white" style="width: 18rem;">
+                        <img height="50px" src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.name}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card’s content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-4"></div>
+                <div class="col-sm-1 col-md-2 col-lg-4"></div>
 
-        </div>
-        <button class="btn btn-primary m-5" onclick="changeValue()">Click</button>
+            </div>
+            <button class="btn btn-primary mx-5 " onclick="changeValue()">Click</button>
     </div>
 </body>
 
@@ -49,20 +50,21 @@
             if (xhr.readyState == 4 && xhr.status == 200) {
                 const data = JSON.parse(xhr.responseText)
                 console.log(data.firstName)
-                result.innerHTML = `<div class="col-4"></div>
-            <div class="col-4">
-                <div class="card mx-auto bg-dark text-white" style="width: 23rem;">
-                    <img src="${data.image}" class="card-img-top" alt="...">
+                result.innerHTML = `<div class="col-sm-1 col-md-2 col-lg-4"></div>
+            <div class="col-sm-1 col-md-2 col-lg-4">
+                <div class="card bg-dark text-white" style="width: 100%;">
+                    <img height="150px" width="20px" src="${data.image}" class="card-img-top rounded-circle" alt="...">
                     <div class="card-body ">
                         <h5 class="card-title">${data.firstName}</h5>
                         <p class="card-text text-start">Age : ${data.age}</p>
+                         <p class="card-text text-start">Gender : ${data.gender}</p>
                          <p class="card-text text-start">Email : ${data.email}</p>
                          <p class="card-text text-start">phone : ${data.phone}</p>
                         
                     </div>
                 </div>
             </div>
-            <div class="col-4"></div>`
+            <div class="col-sm-1 col-md-2 col-lg-4"></div>`
             } else {
                 console.log("API CALL FAILED")
             }
